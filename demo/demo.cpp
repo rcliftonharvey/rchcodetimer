@@ -13,7 +13,7 @@
 // https://github.com/rcliftonharvey/rchcodetimer/blob/master/LICENSE
 //
 // Include the RCH::CodeTimer class
-#include "include/rchcodetimer.h"
+#include "../include/rchcodetimer.h"
 
 // Quick demonstration project for RCH::CodeTimer
 int main (int argc, char *argv[])
