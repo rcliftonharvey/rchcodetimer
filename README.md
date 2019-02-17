@@ -80,9 +80,10 @@ Here's a quick example of how to use the CodeTimer inside a function and have th
       {
          /* do something testworthy */
       }
-   } // When the function ends, the timer is destroyed and writes the measured time into the variable
+      
+   } // When runTest() ends, timer is destroyed and writes the measured time into testResult.
    
-   std::cout << "Test completed in " << std::to_string(timedResult) << " ns" << std::endl;
+   std::cout << "Test completed in " << std::to_string(testResult) << " ns" << std::endl;
    // --> "Test completed in xxxx ns"
    ```
     
