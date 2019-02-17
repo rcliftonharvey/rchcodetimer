@@ -74,7 +74,7 @@ And that's just about all there's to it.
 
 ## Example project
 
-For a real world example, check out the included [demo project](https://github.com/rcliftonharvey/rchcodetimer/tree/master/demo). The project runs through a simple program and measures a few useless loops to demonstrate how to instantiate the CodeTimer and evaluate it. 
+For a real world example, check out the included [demo project](https://github.com/rcliftonharvey/rchcodetimer/blob/master/demo/demo.cpp). The project runs through a simple program and measures a few useless loops to demonstrate how to instantiate the CodeTimer and evaluate it. 
 
 -------------------------------------------------------------------------------------------------------
 
