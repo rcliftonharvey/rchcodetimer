@@ -74,12 +74,13 @@ Here's a quick example of how to use the CodeTimer inside a function and have th
    
    void runTest ()
    {
-      RCH::CodeTimer timer (&timedResult);
+      RCH::CodeTimer timer (&testResult);
+      
       for (unsigned int step=0; step<100000; ++step)
       {
          /* do something testworthy */
       }
-   }
+   } // When the function ends, the timer is destroyed and writes the measured time into the variable
    
    std::cout << "Test completed in " << std::to_string(timedResult) << " ns" << std::endl;
    // --> "Test completed in xxxx ns"
