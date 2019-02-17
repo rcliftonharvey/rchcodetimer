@@ -43,14 +43,14 @@ The CodeTimer handles its own lifetime, so you don't have to (and you can't) sta
 There are different ways to use the CodeTimer, they can be selected by the way a CodeTimer is instantiated:
 
 * **Anonymous instance**<br>
-   Sufficient if you're only interested in a single evaluation. Will not identify the CodeTimer but just print an anonymous message to std::cout when destroyed.   
+   Sufficient if you're only interested in a single evaluation. Will not identify the CodeTimer but just print an anonymous message to std::cout when destroyed.   <br>
     ```c++
     RCH::CodeTimer timer;
     // --> "CodeTimer finished in xxxx ns"
     ```
   <br>
 * **Named instance**<br>
-    Good when you want to compare several different scopes or stages of code. Will identify the CodeTimer in its std::cout message with the std::string name passed into the constructor.
+    Good when you want to compare several different scopes or stages of code. Will identify the CodeTimer in its std::cout message with the std::string name passed into the constructor.<br>
     ```c++
     RCH::CodeTimer timer ("instance name");
     // --> "instance name finished in xxxx ns"
@@ -58,7 +58,7 @@ There are different ways to use the CodeTimer, they can be selected by the way a
     <br>
 * **Quiet instance**<br>
    If you don't like pre-formatted std::cout messages, you can spawn a quiet instance of CodeTimer by passing a pointer to an external double variable into its constructor. This will prevent any automatic messages to std::cout and give you the possibility to evaluate or further process timer results as you please.<br>
-   **Important**: make sure the result variable is _outside_ of the timed scope!
+   **Important**: make sure the result variable is _outside_ of the timed scope!<br>
     ```c++
     double timedResult = 0; // Outside of timed scope
     {
