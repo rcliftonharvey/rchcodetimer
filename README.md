@@ -48,14 +48,14 @@ There are different ways to use the CodeTimer, they can be selected by the way a
     RCH::CodeTimer timer;
     // --> "CodeTimer finished in xxxx ns"
     ```
-  <br>
+  
 * **Named instance**<br>
     Good when you want to compare several different scopes or stages of code. Will identify the CodeTimer in its std::cout message with the std::string name passed into the constructor.<br><br>
     ```c++
     RCH::CodeTimer timer ("instance name");
     // --> "instance name finished in xxxx ns"
     ```
-    <br>
+    
 * **Quiet instance**<br>
    If you don't like pre-formatted std::cout messages, you can spawn a quiet instance of CodeTimer by passing a pointer to an external double variable into its constructor. This will prevent any automatic messages to std::cout and give you the possibility to evaluate or further process timer results as you please.<br><br>
    **Important**: make sure the result variable is _outside_ of the timed scope!<br><br>
@@ -67,7 +67,7 @@ There are different ways to use the CodeTimer, they can be selected by the way a
     std::cout << "Completed in " << std::to_string(timedResult / 1000) << " µs" << std::endl;
     // --> "Completed in xxxx µs"
     ```
-    <br>
+    
 And that's just about all there's to it.
 
 -------------------------------------------------------------------------------------------------------
