@@ -70,11 +70,10 @@ There are different ways to use the CodeTimer, they can be selected by the way a
     <br>
 Here's a quick example of how to use the CodeTimer inside a function and have the result reported to an outside variable:
    ```c++
-   double testResult = 0.0;
-   
-   void runTest ()
+   // Define a test function in e.g. a header
+   void runTest (double* Output)
    {
-      RCH::CodeTimer timer (&testResult);
+      RCH::CodeTimer timer (Output); // Instantiated with the address to Output
       
       for (unsigned int step=0; step<100000; ++step)
       {
@@ -82,6 +81,12 @@ Here's a quick example of how to use the CodeTimer inside a function and have th
       }
       
    } // When runTest() ends, timer is destroyed and writes the measured time into testResult.
+   
+   // Create an external variable that will hold the measured time
+   double testResult = 0.0; 
+   
+   // Run the test and pass the address to the testResult variable in
+   runTest(&testResult);
    
    std::cout << "Test completed in " << std::to_string(testResult) << " ns" << std::endl;
    // --> "Test completed in xxxx ns"
