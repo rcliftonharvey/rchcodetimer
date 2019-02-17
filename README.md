@@ -60,7 +60,7 @@ There are different ways to use the CodeTimer, they can be selected by the way a
    If you don't like pre-formatted std::cout messages, you can spawn a quiet instance of CodeTimer by passing a pointer to an external double variable into its constructor. This will prevent any automatic messages to std::cout and give you the possibility to evaluate or further process timer results as you please.<br><br>
    **Important**: make sure the result variable is _outside_ of the timed scope!<br>
     ```c++
-    double timedResult = 0; // Outside of timed scope
+    double timedResult = 0.0; // Outside of timed scope
     {
       RCH::CodeTimer timer (&timedResult);
     }
@@ -68,6 +68,23 @@ There are different ways to use the CodeTimer, they can be selected by the way a
     // --> "Completed in xxxx µs"
     ```
     
+Here's an example of how to use the CodeTimer inside a function and have the result reported to an outside variable:
+    ```c++
+    double testResult = 0.0;
+    void runTest ()
+    {
+      RCH::CodeTimer timer (&timedResult);
+      
+      for (unsigned int step=0; step<100000; ++step)
+      {
+        /* do something testworthy */
+      }
+    }
+    std::cout << "Test completed in " << std::to_string(timedResult) << " ns" << std::endl;
+    // --> "Test completed in xxxx ns"
+    ```
+    
+<br>
 And that's just about all there's to it.
 
 -------------------------------------------------------------------------------------------------------
