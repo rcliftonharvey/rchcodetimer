@@ -69,20 +69,19 @@ There are different ways to use the CodeTimer, they can be selected by the way a
     ```
     
 Here's an example of how to use the CodeTimer inside a function and have the result reported to an outside variable:
-    ```c++
-    double testResult = 0.0;
-    void runTest ()
-    {
+   ```c++
+   double testResult = 0.0;
+   void runTest ()
+   {
       RCH::CodeTimer timer (&timedResult);
-      
       for (unsigned int step=0; step<100000; ++step)
       {
-        /* do something testworthy */
+         /* do something testworthy */
       }
-    }
-    std::cout << "Test completed in " << std::to_string(timedResult) << " ns" << std::endl;
-    // --> "Test completed in xxxx ns"
-    ```
+   }
+   std::cout << "Test completed in " << std::to_string(timedResult) << " ns" << std::endl;
+   // --> "Test completed in xxxx ns"
+   ```
     
 <br>
 And that's just about all there's to it.
