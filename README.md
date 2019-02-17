@@ -73,7 +73,7 @@ Here's a quick example of how to use the CodeTimer inside a function and have th
    // Define a test function in e.g. a header
    void runTest (double* Output)
    {
-      RCH::CodeTimer timer (Output); // Instantiated with the address to Output
+      RCH::CodeTimer timer (Output); // Forward the variable pointer into the constructor
       
       for (unsigned int step=0; step<100000; ++step)
       {
