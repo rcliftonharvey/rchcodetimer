@@ -67,10 +67,11 @@ There are different ways to use the CodeTimer, they can be selected by the way a
     std::cout << "Completed in " << std::to_string(timedResult / 1000) << " µs" << std::endl;
     // --> "Completed in xxxx µs"
     ```
-    
-Here's an example of how to use the CodeTimer inside a function and have the result reported to an outside variable:
+    <br>
+Here's a quick example of how to use the CodeTimer inside a function and have the result reported to an outside variable:
    ```c++
    double testResult = 0.0;
+   
    void runTest ()
    {
       RCH::CodeTimer timer (&timedResult);
@@ -79,6 +80,7 @@ Here's an example of how to use the CodeTimer inside a function and have the res
          /* do something testworthy */
       }
    }
+   
    std::cout << "Test completed in " << std::to_string(timedResult) << " ns" << std::endl;
    // --> "Test completed in xxxx ns"
    ```
