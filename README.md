@@ -14,7 +14,7 @@
 
 ## Introduction 
 
-This class implements a high-precision timer in pure C++, intended for quick execution time measurements for contained scopes of code.
+This class implements a high-precision timer in pure C++, intended for quick execution time measurements of contained scopes of code.
 
 This class was written with no dependencies, which means you can use it by itself and in any application, without being bound to any 3rd party frameworks.
 
@@ -36,7 +36,7 @@ Depending on your compiler and workspace settings, you will probably have to adj
 
 To avoid possible collisions with other libraries you may be using in your projects, the CodeTimer class resides in the **RCH::** namespace by default. You're of course welcome to change the namespace in the [rchcodetimer.h](https://github.com/rcliftonharvey/rchcodetimer/blob/master/include/rchcodetimer.h#L37) main include.
 
-You don't need to prepare anything, you can just instantiate CodeTimer classes on the fly, anywhere in your running code, when and where you need it.
+You don't need to prepare anything, you can just instantiate CodeTimer classes on the fly, anywhere in your running code, when and where you need them.
 
 The CodeTimer handles its own lifetime, so you don't have to (and you can't) start or stop it by hand. As soon as the timer goes out of scope, i.e. the scope it was instantiated in ends, the CodeTimer is destroyed and handles the result.
 
