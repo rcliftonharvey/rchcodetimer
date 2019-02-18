@@ -21,6 +21,7 @@
 #include <chrono>
 #include <cmath>
 #include <iostream>
+#include <sstream>
 #include <string>
 // --- INCLUDE DEPENDENCIES ABOVE --- //
 
@@ -155,8 +156,14 @@ namespace RCH
             // If no pointer to an outside result value was passed
             else
             {
+                // Workaround because std::to_string doesn't have variable
+                // precision when converting from floating point values.
+                std::ostringstream formatted;
+                formatted.precision(TIMER_PRECI);
+                formatted << std::fixed << result();
+                
                 // Output a string to the text console
-                std::cout << instanceId << " finished in " << std::to_string(result()) << " ns" << std::endl;
+                std::cout << instanceId << " finished in " << formatted.str() << " ns" << std::endl;
             }
         }
         
