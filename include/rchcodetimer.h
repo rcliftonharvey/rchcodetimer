@@ -93,7 +93,7 @@ namespace RCH
             TIMER_VALUE count = point.time_since_epoch().count();
             
             // Return the correctly scaled timestamp
-            return (1e-9 * count);
+            return count;
         }
         
         // Calculates and returns interval between start and stop events
@@ -148,7 +148,7 @@ namespace RCH
             if (output != nullptr)
             {
                 // Write the result value into the outside double variable
-                *output = result();
+                *output = result(); // will be in nanoseconds
                 
                 // Reset the pointer
                 output = nullptr;
